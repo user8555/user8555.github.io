@@ -1,0 +1,5 @@
+total_users = 1,000,000,000
+dau = 20% of total_users
+tweet_rate = 200,000,000 / day
+tweet_size = 256 bytes to gigabytes
+incoming_bandwidth = tweet_size * tweet_rate * 365 days / year

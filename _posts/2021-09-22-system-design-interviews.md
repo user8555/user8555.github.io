@@ -121,6 +121,14 @@ Ask close-ended questions so that:
 
 **A:** You may be able to build a very simplified custom stack solution that optimizes for your needs, but you need to remember that most of the other people do not have deep expertise building foundational systems and can only build "using" them like MySQL, Redis etc. Hence, you will find that others will think of solutions using (a) Queues (b) Redis (c) MySQL when in contrast you may think of a custom solution involving custom stateful components. This is why your solution for Rate limiting differs so much from what the rest of the internet thinks. The solution does not choose Token bucket because atomic operations don't exist in Redis for it. It does not chose to have buckets for doing sliding window algorithm because that is not possible in redis easily. The dropbox synchronization service would be a custom log solution but would be a partitioned MySQL streaming binlogs or a custom change table because most people don't know how to build components from first principles. It is difficult for you to convince them that your custom solution is better unless you compare-contrast it with the standard Redis/MySQL based solution. It is hence very important for you to deeply understand how to solve all the various design problems using Redis/MySQL so that you have the ability to tradeoff it with your custom approach. Lastly, because you are building a custom approach and it is simple in your head, you don't explain it. The other person however has no clue how to get so low level and implement this custom solution and are left wondering why you are being an idiot and not talking about the various interesting situations/solutions they have come up with because having to use Redis/MySQL
 
+**Q**: Aurora transactions summary and tradeoffs
+
+**A**: 
+
+**Q:** Distributed file systems summary and tradeoffs
+
+**A**
+
 # PEDAL framework
 
 1. **P**rocess requirements
@@ -146,13 +154,14 @@ Ask close-ended questions so that:
 
 # Areas of improvement
 
-- [ ] Use estimation as guide for decisions
+- [x] Use estimation as guide for decisions
 - [x] Ask the interviewer where they need me to focus. 
 - [x] Answer interviewer concerns head-on quickly.
-- [x] Incrementally solving it case by case will lead you astray. Have a theory/principle behind the algorithm first and think about it carefully to produce algorithm first
+- [x] Have a theory/principle behind the algorithm first and think about it carefully to produce algorithm first. Incrementally solving it case by case will lead you astray. 
 - [ ] Binary search variation practice
 - [ ] Overall increase the speed
 - [x] Don't linger around in an area more than you need to. If interviewer thinks you are taking too long in 1 area, he will ding you. You need to keep saying why are you still in there lingering.
+- [x] Solve the problem at higher abstractions, expressing the crux of the problem and the solution principles.
 
 # References
 

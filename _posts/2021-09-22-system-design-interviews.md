@@ -162,6 +162,11 @@ Ask close-ended questions so that:
 - [ ] Overall increase the speed
 - [x] Don't linger around in an area more than you need to. If interviewer thinks you are taking too long in 1 area, he will ding you. You need to keep saying why are you still in there lingering.
 - [x] Solve the problem at higher abstractions, expressing the crux of the problem and the solution principles.
+- [ ] Performance on technical, working to go thru past experience.
+- [ ] Actual role not being a fit, that utilized your expertise. Not as really focused on the storage.
+- [ ] System design interview flag -- when you moved forward , toruble with job logic, as language neutral and there was misalignment there, scope and features good, didn't finish job logic and moved elsewhere. Liked more structure.
+- [ ] Providing cultural fit - Do not intimidate them. Show them you are excited to solve problems you are facing.
+
 
 # References
 

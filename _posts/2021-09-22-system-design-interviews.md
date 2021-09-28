@@ -3,6 +3,15 @@ layout: post
 title: System design interview expectations
 ---
 
+- [Company's pet peeves](#companys-pet-peeves)
+- [Interview prelude discussion](#interview-prelude-discussion)
+- [Interviewer responsibility](#interviewer-responsibility)
+- [Candidate responsibility](#candidate-responsibility)
+- [Faq](#faq)
+- [PEDAL framework](#pedal-framework)
+- [Areas of improvement](#areas-of-improvement)
+- [References](#references)
+
 # Company's pet peeves
 
 Know what kind of problems interviewers will have lot of expertise and experience in. They are likely to expect a higher standard of answers in that area and also likely to ask a question in that front. Example: Scale.AI => Workflows, Rubrik => Distributed storage, Distributed databases etc, Engine team => Concurrency, Kernel etc.

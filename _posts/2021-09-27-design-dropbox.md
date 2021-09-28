@@ -27,14 +27,23 @@ title: Design dropbox
 # Scale
 
 max_files = 1,000,000
+
 metadata_per_file = [file_id, parent_id, 4kb attributes]
+
 metadata_size = 4 kilobytes
+
 index_size = metadata_size * max_files
+
 max_file_size = 100MB
+
 users = 1,000,000
+
 dau = 20% of users
+
 uploads_per_user = 5 / day
+
 uploads = uploads_per_user * dau
+
 storage_growth_per_day = max_file_size * uploads * 1 day # adding 10 machines per day
 
 # Focus areas

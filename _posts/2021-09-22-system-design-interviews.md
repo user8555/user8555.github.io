@@ -81,6 +81,7 @@ Always start every interview with this discussion.
 **A:** You can defer the details if you can abstract the internals from the API/data-model. If not you will need to explain why you cannot use a sharded MySQL. Since all books use sharded MySQL, you will need to explain why deviating from it like discusssed in next Q&A.
 
 **Q:** Does a top-down approach work better? If I am designing the synchronization service should I talk about the details of how the log will be implemented immediately? 
+
 **A:** Yes, start high-level. See next question below.
 
 **Q:** Is it possible to explain the overall design approach without delving into the details? For example, when designing Twitter timeline system, should I have described that we are going to have queues where I will enqueue the work on a write for it to be done later? Or should I describe a much higher level solution in terms of synchronization between the caches and the writes to the store and then talk about various tradeoffs of the various approaches I could take to get there?
@@ -145,13 +146,13 @@ Ask close-ended questions so that:
 
 # Areas of improvement
 
-[ ] Use estimation as guide for decisions
-[x] Ask the interviewer where they need me to focus. 
-[x] Answer interviewer concerns head-on quickly.
-[x] Incrementally solving it case by case will lead you astray. Have a theory/principle behind the algorithm first and think about it carefully to produce algorithm first
-[ ] Binary search variation practice
-[ ] Overall increase the speed
-[x] Don't linger around in an area more than you need to. If interviewer thinks you are taking too long in 1 area, he will ding you. You need to keep saying why are you still in there lingering.
+- [ ] Use estimation as guide for decisions
+- [x] Ask the interviewer where they need me to focus. 
+- [x] Answer interviewer concerns head-on quickly.
+- [x] Incrementally solving it case by case will lead you astray. Have a theory/principle behind the algorithm first and think about it carefully to produce algorithm first
+- [ ] Binary search variation practice
+- [ ] Overall increase the speed
+- [x] Don't linger around in an area more than you need to. If interviewer thinks you are taking too long in 1 area, he will ding you. You need to keep saying why are you still in there lingering.
 
 # References
 

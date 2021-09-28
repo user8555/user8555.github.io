@@ -3,11 +3,11 @@ layout: post
 title: System design interview expectations
 ---
 
-### Company's pet peeves
+# Company's pet peeves
 
 Know what kind of problems interviewers will have lot of expertise and experience in. They are likely to expect a higher standard of answers in that area and also likely to ask a question in that front. Example: Scale.AI => Workflows, Rubrik => Distributed storage, Distributed databases etc, Engine team => Concurrency, Kernel etc.
 
-### Interview prelude discussion
+# Interview prelude discussion
 
 Always start every interview with this discussion.
 
@@ -18,7 +18,7 @@ Always start every interview with this discussion.
     * Me: Ok, what is it?
 * Me: I'll try to remember to give reasoning for my decision making. If I forget, please don't ding me. Ask me why and I will tell you
 
-### Interviewer responsibility
+# Interviewer responsibility
 
 **Scope, focus, assess**
 
@@ -30,7 +30,7 @@ Always start every interview with this discussion.
 6. Ding if solution is incomplete
 7. Explain fully otherwise the interviewer will think you didn't know how. Too vague is risky (ref: Bengali guy https://www.pramp.com/session/join/24japY5mEvfwM3ElNWpB)
 
-### Candidate responsibility
+# Candidate responsibility
 
 **Solve, tradeoff, communicate, fully completed work**
 
@@ -45,7 +45,7 @@ Always start every interview with this discussion.
 8. Do NOT compromise on design quality. This is not real-life where you need to make half-baked solutions due to lack of time. Do NOT even discuss those solutions.
 9. If you are presenting a fully-custom solution, you MUST compare it with a solution that uses Redis/MySQL. There is a huge cost to deviating from the standard solutions out there on the internet and deviating from interviewer's knowledge and standard expectations. And you need to justify strongly via the Redis/MySQL solution does not work if you want to deviate from it. 
 
-### Faq
+# Faq
 
 **Q:** When should I ask the clarification? When it occurs to me or when it becomes relevant?
 
@@ -111,7 +111,7 @@ Ask close-ended questions so that:
 
 **A:** You may be able to build a very simplified custom stack solution that optimizes for your needs, but you need to remember that most of the other people do not have deep expertise building foundational systems and can only build "using" them like MySQL, Redis etc. Hence, you will find that others will think of solutions using (a) Queues (b) Redis (c) MySQL when in contrast you may think of a custom solution involving custom stateful components. This is why your solution for Rate limiting differs so much from what the rest of the internet thinks. The solution does not choose Token bucket because atomic operations don't exist in Redis for it. It does not chose to have buckets for doing sliding window algorithm because that is not possible in redis easily. The dropbox synchronization service would be a custom log solution but would be a partitioned MySQL streaming binlogs or a custom change table because most people don't know how to build components from first principles. It is difficult for you to convince them that your custom solution is better unless you compare-contrast it with the standard Redis/MySQL based solution. It is hence very important for you to deeply understand how to solve all the various design problems using Redis/MySQL so that you have the ability to tradeoff it with your custom approach. Lastly, because you are building a custom approach and it is simple in your head, you don't explain it. The other person however has no clue how to get so low level and implement this custom solution and are left wondering why you are being an idiot and not talking about the various interesting situations/solutions they have come up with because having to use Redis/MySQL
 
-### PEDAL framework
+# PEDAL framework
 
 1. **P**rocess requirements
    1. Functional requirements
@@ -134,7 +134,7 @@ Ask close-ended questions so that:
    3. Ask if need to dive deep on particular area
    4. Recurse. Repeat same procedure.
 
-### Areas of improvement
+# Areas of improvement
 
 [ ] Use estimation as guide for decisions
 [x] Ask the interviewer where they need me to focus. 
@@ -144,7 +144,7 @@ Ask close-ended questions so that:
 [ ] Overall increase the speed
 [x] Don't linger around in an area more than you need to. If interviewer thinks you are taking too long in 1 area, he will ding you. You need to keep saying why are you still in there lingering.
 
-### References
+# References
 
 1. https://blog.pramp.com/how-to-succeed-in-a-system-design-interview-27b35de0df26
 2. https://www.amazon.com/gp/product/B09559NJKL/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1

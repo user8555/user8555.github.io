@@ -9,6 +9,5 @@ title: Why build own raft protocol implementation, not use Tikv::raft
    3. Snapshot creation is sync function. That is not possible for multi-GB RGs.
 2. Log index is dense logical sequence like 0, 1, 2 ...
 3. Message sending to peers does not support pipelining because it is a sync function that needs to be finished inline which we clearly cannot
-   1. https://github.pie.apple.com/ACI-DFS/ADFS/blob/master/adfs/src/server/raft/raft_node.rs#L1031
 4. Existing implementation is optimized for throughput not latency
-   1. leader processes more ready messages on an advance() -- https://github.pie.apple.com/ACI-DFS/ADFS/blob/master/adfs/src/server/raft/raft_node.rs#L776    
+   1. leader processes more ready messages on an advance()

@@ -48,7 +48,31 @@ main() {
 }
 ```
 
-Limitation of 2PC hence is that it is not fault-tolerant to either proposer or acceptor failures. The acceptors are blocked until either a new proposer finishes Phase 2 or aborts it.
+Limitation of 2PC hence is that it is not fault-tolerant to either proposer or acceptor failures.
+
+By default the transaction is blocked until the same coordinator is resurrected.
+
+**Q:** Why cannot a new coordinator query the acceptors, determine the current state of the transaction and either proceed to abort or commit it? 
+
+**A:** That works as long as you can guarantee that the old coordinator is dead. If old one comes back in the middle of the new coordinator resolving that transaction then the same transaction can be fixed up by two coordinators and atomicity and consistency is lost.
+
+**Q:** What if the coordinator logs and replicates the transaction state. And a new coordinator is picked up as leader to resume the transaction and finish (commit or abort) it?
+
+**A:** Yes, that will work. This is no different from the original coordinator pausing for a bit and then coming back up again.
+
+**Q:** Is this what Spanner does?
+
+**A:** Yes. I think so.
+
+**Q:** Can you confirm?
+
+**A:** ...
+
+**Q:** What is the overhead of doing this for spanner? What is the overhead compared to federated paxos?
+
+**A:** 
+
+![https://stackoverflow.com/questions/63121233/two-phase-commit-blocking-on-coordinator-failure](../assets/shot1.png)
 
 # 3PC
 

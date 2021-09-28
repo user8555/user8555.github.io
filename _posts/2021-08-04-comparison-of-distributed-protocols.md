@@ -70,7 +70,7 @@ By default the transaction is blocked until the same coordinator is resurrected.
 
 **Q:** What is the overhead of doing this for spanner? What is the overhead compared to federated paxos?
 
-**A:** 
+**A:** [YugaByte distributed 2PC transaction manager](https://blog.yugabyte.com/yes-we-can-distributed-acid-transactions-with-high-performance)
 
 ![https://stackoverflow.com/questions/63121233/two-phase-commit-blocking-on-coordinator-failure](../assets/shot1.png)
 

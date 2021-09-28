@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.author }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Ajay's blog
-author: Ajay Gopalakrishnan
+title: धी
+author: user8555
 description: I work on distributed systems, databases and storage. All thoughts here are my own and do not represent my employer
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://user8555.github.io" # the base hostname & protocol for your site, e.g. http://example.com

@@ -12,24 +12,19 @@ We will evolve 2PC into Paxos and Raft in this article.
 2PL is non-distributed, handling interference of N transactions on 1 node.
 2PC is distributed, handling atomic transaction commit of 1 transaction on N nodes
 
-# 2PC vs. 3PC
-
-Scrawl is a clean, responsive theme for longform writing, with bold featured images, fancy image captions and pull quotes, and plenty of space for your content to shine. Post details fade in when you hover over them, so readers can focus entirely on your beautiful content when not navigating your site. A slide-out sidebar provides ready access to secondary content, including social links, custom menus, and widgets
-
 # 2PC
 
 There are these phases:
-All N acceptors return promise to commit
-All N acceptors are told by proposer to actually do the commit
-Proposer gets N acknowledgements, 1 from each of N acceptors
-The transaction will commit successfully iff ALL following conditions are true:
+1. All N acceptors return promise to commit
+2. All N acceptors are told by proposer to actually do the commit
+3. Proposer gets N acknowledgements, 1 from each of N acceptors
+4. The transaction will commit successfully iff ALL following conditions are true:
+   1. Proposer does not die after Phase 1
+   2. No acceptor dies
+   3. Proposer is able to successfully send/recv messages to all N acceptors for all phases
+   4. If the Phase 1 contains the transaction identified by a unique identifier from the proposer, then Phase 2 and Phase 3 can be retried in a loop until it succeeds.
 
-Proposer does not die after Phase 1
-No acceptor dies
-Proposer is able to successfully send/recv messages to all N acceptors for all phases
-If the Phase 1 contains the transaction identified by a unique identifier from the proposer, then Phase 2 and Phase 3 can be retried in a loop until it succeeds.
-
-```
+```python
 phase_1() {
     send promise to commit requests to all N acceptors
     wait until N promises arrive

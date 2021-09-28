@@ -164,7 +164,11 @@ Ask close-ended questions so that:
 - [x] Solve the problem at higher abstractions, expressing the crux of the problem and the solution principles.
 - [ ] Performance on technical, working to go thru past experience.
 - [ ] Actual role not being a fit, that utilized your expertise. Not as really focused on the storage.
-- [ ] System design interview flag -- when you moved forward , toruble with job logic, as language neutral and there was misalignment there, scope and features good, didn't finish job logic and moved elsewhere. Liked more structure.
+- [ ] System design interview red flags
+  - [ ] Misalignment in requirements with job logic being language neutral. The job logic flesh out was problematic
+  - [ ] Interviewer did hint that they are interested in job logic, but I mixed that discussion with other things and had trouble finishing job logic
+  - [ ] Would have preferred more structure
+  - [ ] Solution was more generalized and more scaleable than what interviewer intended. A simplified solution would have been possible if the requirements around scale were clarified earlier
 - [ ] Providing cultural fit - Do not intimidate them. Show them you are excited to solve problems you are facing.
 
 

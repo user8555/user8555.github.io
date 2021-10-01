@@ -1,6 +1,6 @@
 ---
 layout: post
-title: snapshot isolation
+title: Snapshot isolation
 ---
 
 ## Summary

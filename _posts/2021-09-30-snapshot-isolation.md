@@ -5,9 +5,8 @@ title: snapshot isolation
 
 ## Summary
 
-1. Requires globally unique numbers
-2. Requires monotonically increasing numbers
-3. Does not need to read every key version to create a snapshot summary
+1. Requires HLC or TrueTime
+2. Does not need to read every key version to create a snapshot summary
 
 ## Snapshot isolation algorithm
 

@@ -13,6 +13,7 @@ title: snapshot isolation
 Constraints:
 1. Transactions don't commit in txn_no order
 2. Txn does not block the world to read all the keys for its transaction. It happens gradually concurrently with other operations
+3. Tolerate message delays
 
 
 ```

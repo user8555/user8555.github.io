@@ -44,7 +44,9 @@ $on-laptop:        800px;
   }
 }
 
-
+h1, h2, h3, h4 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
 // Import partials from the `whiteglass` theme.
 @import "whiteglass";

@@ -42,7 +42,7 @@ Visibility criteria for my_txn_num:
 
 ## Faq
 
-### Does snapshot isolation require globally unique sequence numbers?
+**Does snapshot isolation require globally unique sequence numbers?**
 
 Let's say
 my_txn=5
@@ -59,7 +59,7 @@ txn_state_committed = {
   k1: [1],
 }
 
-**When my_txn=5 goes to read k0, should it include [4]?**
+When my_txn=5 goes to read k0, should it include [4]?
 
 We should not include it, because original snapshot didn't have it. But we don't read every key txn summary before transaction begins, so we cannot determine that.
 
@@ -69,10 +69,10 @@ So, we can never compute this unless the txn status is centralized in a single p
 
 Hence, yes, txn_numbers need to make sense cross-keys. Translating that to distributed databases, yes, the txn_numbers need to be globally unique
 
-### Do you actually have to visit every affected row and take a snapshot before beginning the transaction?
+**Do you actually have to visit every affected row and take a snapshot before beginning the transaction?**
 
 No
 
-### Does snapshot isolation require monotonically increasing txn numbers?
+**Does snapshot isolation require monotonically increasing txn numbers?**
 
 Yes, as you can clearly see from above visibility rules, they rely on < and > operators.

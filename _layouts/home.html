@@ -25,13 +25,13 @@ layout: default
           {% endif %}
         </span>
 
-        <h2>
+        <h3>
           {% if post.external-url %}
             <a class="post-link" href="{{ post.external-url }}">{{ post.title | escape }} &rarr;</a>
           {% else %}
             <a class="post-link" href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
           {% endif %}
-        </h2>
+        </h3>
       </li>
     {% endfor %}
   </ul>

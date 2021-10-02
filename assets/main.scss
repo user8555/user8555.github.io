@@ -45,9 +45,10 @@ $on-laptop:        800px;
 }
 
 h1, h2, h3, h4 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Roboto Slab", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 // Import partials from the `whiteglass` theme.
 @import "whiteglass";
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');

@@ -31,3 +31,5 @@ So, now we see that each reader needs to get messages from each partition to det
 
 A global log with global order thus requires a global ticker and events needs to be generated every tick and system can only go as fast as the duration of 1 tick. These systems have a lower bound latency of 1 tick and are not suitable for low latency systems if the tick duration is too big for their low latency use cases. As an example, building a globally distributed block store with <1ms latencies is impossible using a global log approach each reader will need to consume N partition messages per millisecond. The overall message cost here is N*M messages/second where N = num partitions and M = num readers.
 
+## Duality between worklows and transaction logging?
+

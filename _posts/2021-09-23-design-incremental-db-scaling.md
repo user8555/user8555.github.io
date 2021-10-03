@@ -36,5 +36,5 @@ In above steps, user needs to restart the operation manually in case of partial 
 
 The assumption in this approach is that the stopping the writes to P1.seg1 provides equivalent of locking P1.seg1 for any more udpates while the current move transaction is in progress. This assumption is true only if seg1 can receive writes from just one writer endpoint. This is not true in case of general purpose distributed transactions over multi-master databases but it is true for single-attach block stores.
 
-### Approach 2
+### Approach 2 - 2PC
 

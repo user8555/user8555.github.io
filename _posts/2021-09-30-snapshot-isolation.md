@@ -37,12 +37,12 @@ Visibility criteria for my_txn_num:
 2. captured_status[txn_num] in {in_progress, not_started}
 
 ## References:
-1. https://timilearning.com/posts/ddia/part-two/chapter-7/#indexes-and-snapshot-isolation
-2. https://github.com/Sdaas/SnapshotIsolationDemo/blob/93987045dd709c0a81f4cef9fa33e7c221b5d22b/src/main/java/com/daasworld/Account.java#L26
+1. [Timilearning transactions chapter](https://timilearning.com/posts/ddia/part-two/chapter-7/#indexes-and-snapshot-isolation)
+2. [Snapshot isolation code example in Java](https://github.com/Sdaas/SnapshotIsolationDemo/blob/93987045dd709c0a81f4cef9fa33e7c221b5d22b/src/main/java/com/daasworld/Account.java#L26)
 
 ## Faq
 
-**Does snapshot isolation require globally unique sequence numbers?**
+### Does snapshot isolation require globally unique sequence numbers?
 
 Let's say
 my_txn=5
@@ -69,10 +69,10 @@ So, we can never compute this unless the txn status is centralized in a single p
 
 Hence, yes, txn_numbers need to make sense cross-keys. Translating that to distributed databases, yes, the txn_numbers need to be globally unique
 
-**Do you actually have to visit every affected row and take a snapshot before beginning the transaction?**
+### Do you actually have to visit every affected row and take a snapshot before beginning the transaction?
 
 No
 
-**Does snapshot isolation require monotonically increasing txn numbers?**
+### Does snapshot isolation require monotonically increasing txn numbers?
 
 Yes, as you can clearly see from above visibility rules, they rely on < and > operators.

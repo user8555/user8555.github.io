@@ -1,27 +1,25 @@
 ---
 layout: post
-title: Transactionally consistent distributed secondary indexes
+title: Distributed log
 ---
 
-## Landscape
-
-{% include strategies.html %}
-
-<!-- ![https://whimsical.com/distributed-system-strategies-KqZAphpqSQyp7FhZ1cMJcN](/assets/Distributed%20system%20strategies.png) -->
-
-## Global log
-
 Designing a fault tolerant log is at the heart of many applications. It can be used to build queues like Kakfa, stream layer for Azure storage, transaction log for FaunaDB and so on.
+
+## Does log need partitioning?
 
 If the log can fit in 1 node from space and performance perspective, then the best approach is to have N replicas of an on-disk ring-buffer and use them to write your transaction logs.
 
 If the log cannot fit in 1 node, then the log needs to be parititioned across many nodes and each parititon can be replicated like above approach.
+
+## Does partitioned log need global order?
 
 If you have parititioned the log, decide if you care about a global order of all records in the log. 
 
 If you do not care about a global order, then it's easier. This is the approach Kafka, SQS FIFO takes. Within each parition the append-log can have its own sequence number and a unique record can be fetched via (partition_id, sequence_number). A client reading from the log will read from all the parititions and merge the various logs as per its own business logic akin to merge sort algorithm.
 
 If you do care about a global order and have multiple parititons, unfortunately this is a hard problem and the solution comes at a cost. Fundamentally it boils down to figuring out a deterministic scheme to order the order the records from various partitions such that each reader of the logs decides on the same global order. 
+
+## Determining global order for partitioned logs
 
 Since the logs are parititioned and the logs are inserted by many writers, it is impossible for the log record itself to specify a global sequence number.
 

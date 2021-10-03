@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Undo/redo logging basics
+title: Undo, redo logging
 ---
 
 Redo logging is needed because:

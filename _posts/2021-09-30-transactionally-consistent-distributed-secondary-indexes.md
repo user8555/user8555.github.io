@@ -5,7 +5,7 @@ title: Transactionally consistent distributed secondary indexes
 
 ## Landscape
 
-{% include /assets/strategies.html %}
+{% include strategies.html %}
 
 <!-- ![https://whimsical.com/distributed-system-strategies-KqZAphpqSQyp7FhZ1cMJcN](/assets/Distributed%20system%20strategies.png) -->
 

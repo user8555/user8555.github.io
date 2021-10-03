@@ -5,6 +5,8 @@ title: Incremental database scaling
 
 ## Moving a record from one partition to another
 
+Any move operation requires a quiscent point
+
 A partition is a collection of records. We want to move a record R from partition P1 to P2.
 
 Let there be a transaction partition P3. There is a SegmentMap indicating which partition holds that segment. For the transaction to be complete following changes need to be made:
@@ -14,7 +16,9 @@ Let there be a transaction partition P3. There is a SegmentMap indicating which 
 3. Copy data from P1.seg1 to P2.seg2
 4. Delete seg1 in P1
 
-Approach 1
+### Approach 1
+
+Idea: shadow paging and garbage collection
 
 1. Create P2.seg2
 2. Stop writes to P1.seg1
@@ -22,5 +26,11 @@ Approach 1
 4. Update SegmentMap[bytes_range] from P1.seg1 to P2.seg2
 5. Restart writes that were meant for P1.seg1. They will now be re-mapped to P2.seg2
 
-Approach 2
+Atomicity comes from atomically updating the SegmentMap[bytes_range]. That is when the effects of the move operation become visible and the "move txn" is considered committed.
+
+Consistency comes from pausing writes to P1.seg1 while a copy into P2.seg2 is being made and from restarting whole operation from (1) in case of partial failures.
+
+Fault tolerance comes from being able to restart the entire operation from (1) in case of partial failures and not corrupting state anywhere with a partial failure. The orphan segments can be removed by a garbage collector since it will not have any references.
+
+### Approach 2
 

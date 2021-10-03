@@ -3,11 +3,9 @@ layout: post
 title: Incremental database scaling
 ---
 
-# Moving a record from one partition to another
+## Moving a record from one partition to another
 
 A partition is a collection of records. We want to move a record R from partition P1 to P2.
-
-## Using 2PC
 
 Let there be a transaction partition P3. There is a SegmentMap indicating which partition holds that segment. For the transaction to be complete following changes need to be made:
 
@@ -23,3 +21,6 @@ Approach 1
 3. Copy from P1.seg1 to P2.seg2
 4. Update SegmentMap[bytes_range] from P1.seg1 to P2.seg2
 5. Restart writes that were meant for P1.seg1. They will now be re-mapped to P2.seg2
+
+Approach 2
+

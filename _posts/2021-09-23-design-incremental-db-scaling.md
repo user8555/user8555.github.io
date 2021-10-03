@@ -41,4 +41,16 @@ The assumption in this approach is that the stopping the writes to P1.seg1 provi
 If partition can get writes from two different writer endpoints, then the write/delete lock cannot be held on the client and instead must be pushed down to the partition itself. This will require each partition to have a lock manager. The locks need to be replicated for locks to be retained on leader transfer between replicas. We also need a txn log like above approach. The txn log needs to be replicated.
 
 1. Write the txn record to txn log and mark it to state 'preparing'
-2. 
+2. Perform prepare phase
+   1. Request X lock on P1, P2 and SegmentMap. 
+   2. A move transaction cannot move an old version of data to P2 from P1. That would violate the repeatable read guarantee. Hence, the most recent committed value must be read and any further updates must be prohibited. Hence the X lock on P1.
+   3. Write log records in P2 indicating creation of seg2 with the content read from P1.seg1 as initial value
+   4. Write log record in P3 indicating the SegmentMap update
+   5. Write log record in P1 indicating deletion of seg1
+   6. Each partition writes those log records to Redo log durably.
+   7. Each partition ACKs back if write to disk was successful.
+3. Enter Commit phase
+   1. Each partition writes a Txn commit record in each transaction.
+   2. Each partition ACKs back if write is durably written to Redo log.
+   3. Write txn record to txn log indicating it is committed
+   

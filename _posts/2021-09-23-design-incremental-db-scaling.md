@@ -53,4 +53,6 @@ If partition can get writes from two different writer endpoints, then the write/
    1. Each partition writes a Txn commit record in each transaction.
    2. Each partition ACKs back if write is durably written to Redo log.
    3. Write txn record to txn log indicating it is committed
-   
+
+## Atomically consistent Multi-RG flush
+

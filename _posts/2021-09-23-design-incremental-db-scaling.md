@@ -54,5 +54,12 @@ If partition can get writes from two different writer endpoints, then the write/
    2. Each partition ACKs back if write is durably written to Redo log.
    3. Write txn record to txn log indicating it is committed
 
-## Atomically consistent Multi-RG flush
+## Atomically consistent multi-partition operations
 
+### Approach 1
+
+Another approach is similar to Approach 1. Each partition supports multi-version segments. Write to a segment for partition 'i' moves it from V[i]_n to V[i]_n+1. Each partition does the write. If all writes are successful we can write a single txn record to the SegmentMap indicating that the new version of all the affected versions is now V[i]_n+1 for all 'i'. Atomically commit this txn record. If the version update is successful then the multi-partition write is successful and there will not be any torn writes.
+
+### Approach 2
+
+We can do similar to approach 2 above. This will force all multi-partition writes to be written to the transaction log first and adds the 2N message overhead for writing across N partitions.

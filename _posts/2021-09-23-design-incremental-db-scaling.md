@@ -34,5 +34,7 @@ Fault tolerance comes from being able to restart the entire operation from (1) i
 
 In above steps, user needs to restart the operation manually in case of partial failures because the move txn is not logged in a transaction log. If we don't want user to restart manually, add step (0) which will log the operation into the txn log and a commit_lsn which logs the lsn until which the operations have been completed.
 
+The assumption in this approach is that the stopping the writes to P1.seg1 provides equivalent of locking P1.seg1 for any more udpates while the current move transaction is in progress.
+
 ### Approach 2
 

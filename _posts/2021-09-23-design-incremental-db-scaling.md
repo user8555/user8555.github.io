@@ -38,3 +38,7 @@ The assumption in this approach is that the stopping the writes to P1.seg1 provi
 
 ### Approach 2 - 2PC
 
+If partition can get writes from two different writer endpoints, then the write/delete lock cannot be held on the client and instead must be pushed down to the partition itself. This will require each partition to have a lock manager. The locks need to be replicated for locks to be retained on leader transfer between replicas. We also need a txn log like above approach. The txn log needs to be replicated.
+
+1. Write the txn record to txn log and mark it to state 'preparing'
+2. 

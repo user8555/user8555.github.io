@@ -32,5 +32,7 @@ Consistency comes from pausing writes to P1.seg1 while a copy into P2.seg2 is be
 
 Fault tolerance comes from being able to restart the entire operation from (1) in case of partial failures and not corrupting state anywhere with a partial failure. The orphan segments can be removed by a garbage collector since it will not have any references.
 
+In above steps, user needs to restart the operation manually in case of partial failures because the move txn is not logged in a transaction log. If we don't want user to restart manually, add step (0) which will log the operation into the txn log and a commit_lsn which logs the lsn until which the operations have been completed.
+
 ### Approach 2
 

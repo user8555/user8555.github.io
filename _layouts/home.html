@@ -30,13 +30,15 @@ layout: default
               • <a href="{{ post.url | relative_url }}">Permalink</a>
             {% endif %}
         </span>
-        <h4>
+        <p>
+          <b>
           {% if post.external-url %}
             <a class="post-link" href="{{ post.external-url }}">{{ post.title | escape }} &rarr;</a>
           {% else %}
             <a class="post-link" href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
           {% endif %}
-        </h4>
+          </b>
+        </p>
         {% endfor %}    
       </li>
     {% endfor %}

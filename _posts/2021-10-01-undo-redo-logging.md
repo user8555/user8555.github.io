@@ -3,11 +3,14 @@ layout: post
 title: Undo/redo logging basics
 ---
 
-## Why have both?
+Redo logging is needed because:
+1. Atomicity, Consistency and Durability guarantees for database updates are simpler with appends to a log
+2. Higher performance for writes because there is no need to update full pages to update database indexes. Database index updates can be flushed back to disk asynchronously later via applying logging techniques.
 
-
-
-## What is recovery procedure for both?
+Undo logging is needed because:
+1. Redo log size is fixed forcing database pages to be updated before txn commit.
+2. Older versions of records are needed for rollback & snapshot isolation
+3. Query peformance is better because it does not need to linear scan redo log which is not indexed by table's fields.
 
 ## References
 

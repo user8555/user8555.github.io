@@ -54,6 +54,10 @@ If partition can get writes from two different writer endpoints, then the write/
    2. Each partition ACKs back if write is durably written to Redo log.
    3. Write txn record to txn log indicating it is committed
 
+### Approach 3
+
+
+
 ## Atomically consistent multi-partition operations
 
 ### Approach 1

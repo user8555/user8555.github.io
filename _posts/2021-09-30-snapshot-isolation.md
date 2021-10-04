@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Snapshot isolation
+tags: transactions
 ---
 
 ## Summary

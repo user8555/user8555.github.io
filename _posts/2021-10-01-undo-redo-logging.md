@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Undo, redo logging
+tags: logging
 ---
 
 Redo logging is needed because:

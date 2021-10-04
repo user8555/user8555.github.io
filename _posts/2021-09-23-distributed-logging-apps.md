@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Applications of distributed log for transactions
+title: Distributed Redo log applications 
+tags: logging
 ---
 
 ## When to use distributed redo log

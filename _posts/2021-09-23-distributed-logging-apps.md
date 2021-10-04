@@ -3,6 +3,8 @@ layout: post
 title: Applications of distributed log for transactions
 ---
 
+## When to use distributed redo log
+
 You want to record the complex transaction in a distributed transaction log upfront if:
 
 1. The txn is expensive or queued up and you want to respond to caller quickly and asynchronously apply it later
@@ -61,6 +63,8 @@ If partition can get writes from two different writer endpoints, then the write/
    3. Write txn record to txn log indicating it is committed
 
 ## Atomically consistent multi-partition operations
+
+Both the approaches below can utilize a distributed transaction redo log to record the RG split transaction if any of the reasons mentioned [here](#when-to-use-distributed-redo-log) are true.
 
 ### Approach 1
 

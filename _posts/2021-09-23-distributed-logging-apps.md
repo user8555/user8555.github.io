@@ -1,7 +1,12 @@
 ---
 layout: post
-title: Incremental database scaling
+title: Applications of distributed log for transactions
 ---
+
+A Txn log can help if:
+1. The txn is expensive or queued up and you want to respond to caller quickly and asynchronously apply it later
+2. You need to record tentative new versions of segments if there is no automatic garbage collection scheme and need the txn coordinator to rollback the txn explicitly
+3. The final-pointer-flip technique cannot be used to make all updates visible externally atomically and consistently. In this case, the Txn log can be used by a fault tolerant txn coordinator to perform 2 phase commit on the transaction
 
 ## Moving a record from one partition to another
 
@@ -53,10 +58,6 @@ If partition can get writes from two different writer endpoints, then the write/
    1. Each partition writes a Txn commit record in each transaction.
    2. Each partition ACKs back if write is durably written to Redo log.
    3. Write txn record to txn log indicating it is committed
-
-### Approach 3
-
-
 
 ## Atomically consistent multi-partition operations
 

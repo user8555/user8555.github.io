@@ -92,7 +92,12 @@ We can do similar to approach 2 above. This will force all multi-partition write
 1. Create 2 RG clones, each with filter for different halves
 2. These 2 clones will be located in the same 3 places the original RG is located. These 2 clones are shallow clones; essentially metadata specifications for filters when the clone is created and hence very fast operations. 
 3. These are shallow clones pointing to the same underlying log and compacted region of original RG. Hence any data updates to the original RG will be visible to the shallow clones as well
-4. Make an atomic metadata update removing the old key range mapping to old RG and mapping the new 2 halves to the 2 new RG clones instead. All writes made before this metadata update will be sent to the original RG. They will still be visible to the 2 clones as per (3). Writes after the metadata update will be sent to the 2 new RGs. Since this was an transactional metadata update, we will never see writes go to new as well as old RGs simultaneously guaranteeing correctness and consistency.
+4. Make an atomic metadata update removing the old key range mapping to old RG and mapping the new 2 halves to the 2 new RG clones instead. All writes made before this metadata update will be sent to the original RG. They will still be visible to the 2 clones as per (3). 
+5. Writes after the metadata update will be sent to the 2 new RGs. Since this was an transactional metadata update, we will never see writes go to new as well as old RGs simultaneously guaranteeing correctness and consistency.
+
+#### Pros:
+1. Operation is very quick because splitting an RG is purely metadata updates, thanks to shallow filtered clones
+2. Can leverage regular RG rebalancing feature to move the RGs to different places after the update.
 
 #### Cons:
 1. Requires a RG clone with filtering feature

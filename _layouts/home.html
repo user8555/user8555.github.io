@@ -16,10 +16,12 @@ layout: default
       {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
       {% capture lang %}{% if post_lang != site_lang %}{{ post_lang }}{% endif %}{% endcapture %}
 
+      <hr/>
       <li>
         <span class="post-meta">
           {% include date.html date=day.name lang=lang %}
         </span>
+        
 
         {% for post in day.items %}
         <span class="post-meta">
@@ -30,15 +32,18 @@ layout: default
               • <a href="{{ post.url | relative_url }}">Permalink</a>
             {% endif %}
         </span>
-        <p>
-          <b>
+        {% endfor %}
+        
+        <h2></h2>
+
+        {% for post in day.items %}
+          <h3>
           {% if post.external-url %}
             <a href="{{ post.external-url }}">{{ post.title | escape }} &rarr;</a>
           {% else %}
             <a href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
           {% endif %}
-          </b>
-        </p>
+          </h3>
         {% endfor %}    
       </li>
     {% endfor %}

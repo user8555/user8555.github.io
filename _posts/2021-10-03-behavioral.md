@@ -158,3 +158,4 @@ title: Behavioral questions
 3. [Story bank](https://www.tryexponent.com/courses/behavioral/behavioral-interviews-creating-story-bank)
 4. [Team alignment](https://pulseasync.com/operators/remote-team-alignment/)
 5. [Execution-focused leadership](http://www.simpsonexecutivecoaching.com/pdf/whitepaper/execution-focused-leadership-msimpson-whitepaper.pdf)
+6. [Who are staff, principal and distinguished engineers](https://leaddev.com/audience-insights/who-are-staff-principal-and-distinguished-engineers)

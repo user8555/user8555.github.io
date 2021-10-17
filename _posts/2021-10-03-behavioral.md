@@ -65,10 +65,11 @@ title: Behavioral questions
    2.  Tell me about a time you worked with cross-functional teams and the role you played
    3.  Have you ever collaborated with multiple teams? What challenges did you face?
    4.  How would you manage timelines in a highly matrixed environment, where there is no top down authority?
-4. Mentoring
-   1. How do you develop a relationship with TLs/Staff engineers?
-   2. How do you grow a TL/Staff engineer?
-   3. How do you grow the interpersonal skills of a Staff engineer?
+4. Transformational leadership
+   1. Mentoring
+      1. How do you develop a relationship with TLs/Staff engineers?
+      2. How do you grow a TL/Staff engineer?
+      3. How do you grow the interpersonal skills of a Staff engineer?
 5. Think clearly
    1. Tell me about a time when you had to make a difficult decision. Specifically, what considerations were involved and how did you decide which ones to focus on?
    2. Tell me about a time data conflicted with intuition about an importnant decision. What did you do
@@ -156,3 +157,4 @@ title: Behavioral questions
 2. [Exponent How to answer XFN influence questions](https://www.tryexponent.com/courses/cross-functional-pmm/how-to-answer-cross-functional)
 3. [Story bank](https://www.tryexponent.com/courses/behavioral/behavioral-interviews-creating-story-bank)
 4. [Team alignment](https://pulseasync.com/operators/remote-team-alignment/)
+5. [Execution-focused leadership](http://www.simpsonexecutivecoaching.com/pdf/whitepaper/execution-focused-leadership-msimpson-whitepaper.pdf)

@@ -159,3 +159,4 @@ title: Behavioral questions
 4. [Team alignment](https://pulseasync.com/operators/remote-team-alignment/)
 5. [Execution-focused leadership](http://www.simpsonexecutivecoaching.com/pdf/whitepaper/execution-focused-leadership-msimpson-whitepaper.pdf)
 6. [Who are staff, principal and distinguished engineers](https://leaddev.com/audience-insights/who-are-staff-principal-and-distinguished-engineers)
+7. [How to act as Staff engineer at Heroku -- Very good article](https://amyunger.com/blog/2020/09/10/staff-engineer-at-heroku.html)

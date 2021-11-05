@@ -121,3 +121,70 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum odio 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum odio at nisi pulvinar congue. Fusce urna lectus, pellentesque non magna eu, semper tempus risus
 
 # How to measure this?
+
+### Concurrent HashMap
+
+```rust
+
+/// Concurrent HashMap designed by bucketing
+
+use std::collections::VecDeque;
+use parking_lot::{RwLock};
+use std::sync::{Arc};
+
+struct Entry {
+    key: u64,
+    value: u64,
+}
+
+struct ConcurrentHashMap {
+    inner: Arc<RwLock<Vec<Arc<RwLock<VecDeque<Entry>>>>>>,
+}
+
+fn hash(key: u64) -> usize {
+    key as usize
+}
+
+impl ConcurrentHashMap {
+    fn new() -> Self {
+        Self {
+            inner: Arc::new(RwLock::new(vec![Arc::new(RwLock::new(VecDeque::new())); 16])),
+        }
+    }
+    
+    fn put(&self, key: u64, value: u64) {
+        let inner = self.inner.read();
+        let len = inner.len() - 1;
+        let hash_loc = hash(key) % len;
+        
+        let mut q = inner[hash_loc].write();
+
+        for q_item in q.iter_mut() {
+            if q_item.key == key {
+                q_item.value = value;
+                return;
+            }    
+        }
+        
+        q.push_back(Entry {
+            key, value
+        });
+    }
+    
+    fn get(&self, key: u64) -> Option<u64> {
+        let inner = self.inner.read();
+        let len = inner.len() - 1;
+        let hash_loc = hash(key) % len;
+        
+        let q = inner[hash_loc].write();
+        for q_item in q.iter() {
+            if q_item.key == key {
+                return Some(q_item.value);
+            }    
+        }
+        
+        None
+    }
+}
+
+```

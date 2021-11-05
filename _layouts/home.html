@@ -16,7 +16,7 @@ layout: default
       {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
       {% capture lang %}{% if post_lang != site_lang %}{{ post_lang }}{% endif %}{% endcapture %}
 
-      <hr/>
+      <br/>
       <li>
         <span class="post-meta">
           {% include date.html date=day.name lang=lang %}

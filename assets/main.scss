@@ -25,10 +25,10 @@ $grey-color-light: lighten($grey-color, 45%);
 $grey-color-dark:  darken($grey-color, 20%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    1536px;
 
 $on-palm:          600px;
-$on-laptop:        800px;
+$on-laptop:        1536px;
 
 
 
@@ -48,6 +48,10 @@ $on-laptop:        800px;
 
 h1, h2, h3, h4 {
   font-family: "Roboto Slab", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.post-content {
+    column-count: 3
 }
 
 // Import partials from the `whiteglass` theme.

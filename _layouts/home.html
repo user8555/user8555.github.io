@@ -3,8 +3,6 @@ layout: default
 ---
 <div class="home">
 
-  <h1 class="page-heading">{% include i18n.html value="archive" default="Blog Archive" %}</h1>
-
   {{ content }}
 
   {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
@@ -12,6 +10,28 @@ layout: default
   {% assign postsByDay = site.posts | group_by_exp:"post", "post.date | date: '%A, %B %e, %Y'" %}
 
   <ul class="post-archives">
+    {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+    {% for year in postsByYear %}
+      <h1>{{ year.name }}</h1>
+      {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%B'" %}
+
+    {% for month in postsByMonth %}
+    <h2>{{ month.name }}</h2>
+    <ul>
+      {% for post in month.items %}
+      {% assign postDate = post.date | date: '%b %d' %}
+        <li>
+          <span class="post-meta">{{postDate}}</span>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% endfor %}
+    {% endfor %}
+  </ul>
+
+  <!-- <ul class="post-archives">
     {% for day in postsByDay %}
       {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
       {% capture lang %}{% if post_lang != site_lang %}{{ post_lang }}{% endif %}{% endcapture %}
@@ -47,6 +67,6 @@ layout: default
         {% endfor %}    
       </li>
     {% endfor %}
-  </ul>
+  </ul> -->
 
 </div>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Design topics
+category: design-challenge
 ---
 
 # Curios choices

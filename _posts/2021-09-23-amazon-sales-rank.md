@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Design amazon sales rank
+category: design-challenge
 ---
 
 # My attempt

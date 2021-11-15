@@ -3,20 +3,11 @@ layout: post
 title: System design interview expectations
 ---
 
-- [Company's pet peeves](#companys-pet-peeves)
-- [Interview prelude discussion](#interview-prelude-discussion)
-- [Interviewer responsibility](#interviewer-responsibility)
-- [Candidate responsibility](#candidate-responsibility)
-- [Faq](#faq)
-- [PEDAL framework](#pedal-framework)
-- [Areas of improvement](#areas-of-improvement)
-- [References](#references)
-
-# Company's pet peeves
+## Company's pet peeves
 
 Know what kind of problems interviewers will have lot of expertise and experience in. They are likely to expect a higher standard of answers in that area and also likely to ask a question in that front. Example: Scale.AI => Workflows, Rubrik => Distributed storage, Distributed databases etc, Engine team => Concurrency, Kernel etc.
 
-# Interview prelude discussion
+## Interview prelude discussion
 
 Always start every interview with this discussion.
 
@@ -27,7 +18,7 @@ Always start every interview with this discussion.
     * Me: Ok, what is it?
 * Me: I'll try to remember to give reasoning for my decision making. If I forget, please don't ding me. Ask me why and I will tell you
 
-# Interviewer responsibility
+## Interviewer responsibility
 
 **Scope, focus, assess**
 
@@ -39,7 +30,7 @@ Always start every interview with this discussion.
 6. Ding if solution is incomplete
 7. Explain fully otherwise the interviewer will think you didn't know how. Too vague is risky (ref: Bengali guy https://www.pramp.com/session/join/24japY5mEvfwM3ElNWpB)
 
-# Candidate responsibility
+## Candidate responsibility
 
 **Solve, tradeoff, communicate, fully completed work**
 
@@ -54,7 +45,7 @@ Always start every interview with this discussion.
 8. Do NOT compromise on design quality. This is not real-life where you need to make half-baked solutions due to lack of time. Do NOT even discuss those solutions.
 9. If you are presenting a fully-custom solution, you MUST compare it with a solution that uses Redis/MySQL. There is a huge cost to deviating from the standard solutions out there on the internet and deviating from interviewer's knowledge and standard expectations. And you need to justify strongly via the Redis/MySQL solution does not work if you want to deviate from it. 
 
-# Faq
+## Faq
 
 **Q:** When should I ask the clarification? When it occurs to me or when it becomes relevant?
 
@@ -129,7 +120,7 @@ Ask close-ended questions so that:
 
 **A**
 
-# PEDAL framework
+## PEDAL framework
 
 1. **P**rocess requirements
    1. Functional requirements
@@ -152,7 +143,7 @@ Ask close-ended questions so that:
    3. Ask if need to dive deep on particular area
    4. Recurse. Repeat same procedure.
 
-# Areas of improvement
+## Areas of improvement
 
 - [x] Use estimation as guide for decisions
 - [x] Ask the interviewer where they need me to focus. 
@@ -172,7 +163,7 @@ Ask close-ended questions so that:
 - [ ] Providing cultural fit - Do not intimidate them. Show them you are excited to solve problems you are facing.
 
 
-# References
+## References
 
 1. https://blog.pramp.com/how-to-succeed-in-a-system-design-interview-27b35de0df26
 2. https://www.amazon.com/gp/product/B09559NJKL/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Design twitter timeline and search
+category: design-challenge
 ---
 
 # Functional requirements

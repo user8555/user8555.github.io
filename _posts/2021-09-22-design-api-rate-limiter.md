@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Design API rate limiter
+category: design-challenge
 ---
 
 # Clarification

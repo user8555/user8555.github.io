@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Design dropbox
+category: design-challenge
 ---
 
 # Functional requirements

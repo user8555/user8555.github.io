@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Installing a few things
+category: productivity
 ---
 
 # Install Excalidraw

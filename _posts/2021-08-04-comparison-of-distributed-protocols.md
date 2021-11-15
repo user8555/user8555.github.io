@@ -7,12 +7,12 @@ We will evolve 2PC into Paxos and Raft in this article.
 
 <!-- more -->
 
-# 2PL vs. 2PC
+## 2PL vs. 2PC
 
 2PL is non-distributed, handling interference of N transactions on 1 node.
 2PC is distributed, handling atomic transaction commit of 1 transaction on N nodes
 
-# 2PC
+## 2PC
 
 There are these phases:
 1. All N acceptors return promise to commit
@@ -74,7 +74,7 @@ By default the transaction is blocked until the same coordinator is resurrected.
 
 ![https://stackoverflow.com/questions/63121233/two-phase-commit-blocking-on-coordinator-failure](../assets/shot1.png)
 
-# 3PC
+## 3PC
 
 In 2PC, acceptor 1 can only commit a message if it is notified that all other acceptors have also promised to commit. Since the proposer died after phase 1, there is no way for acceptor 1 to determine if it should commit the entry.
 
@@ -127,4 +127,3 @@ The UUID is composed of (timestamp, seq_num, unique_node_id). This generates alm
 * The arrival time on each N1 and N2 can be locally different
 * There needs to be some mechanism to tie break between the two
 * We need an arbitrary notion of R1 and R2 arriving at the same time across the system
-* 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Writing performant programs
+categories: low-level-systems
 ---
 
 A zoo of techniques are involved in writing performant programs. Here I make an attempt to categorize various techniques and organize them into a procedure that can hopefully help in performance improvement to future projects.

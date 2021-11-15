@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Design of multi-core IO and compute staging systems
+categories: low-level-systems
 ---
 
 **rule 01**: All kind of data abstractions io_submit, channels, network streams, io_uring match with the sink/stream interface

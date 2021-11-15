@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Undo, redo logging
-tags: logging
+categories: distributed-logging
 ---
 
 Redo logging is needed because:

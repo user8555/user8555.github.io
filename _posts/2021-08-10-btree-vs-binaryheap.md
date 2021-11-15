@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Algorithms and data structures
+title: BTree vs. BinaryHeap
+categories: data-structures
 ---
 
 # B-Tree

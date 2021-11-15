@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Design topics
-category: design-challenge
+category: job-interviews
 ---
 
 # Curios choices

@@ -1,10 +1,8 @@
 ---
 layout: post
-title: Layered storage systems
+title: Design block-store using distributed KV-store
 category: design-challenge
 ---
-
-# Design block-store on top of a distributed KV-store
 
 ## Goals
 

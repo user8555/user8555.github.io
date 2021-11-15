@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Transaction manager vs. Lock manager
-tags: transactions
+categories: transactions
 ---
 
 ## Transaction manager

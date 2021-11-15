@@ -1,6 +1,7 @@
 ---
 layout: post
 title: System design interview expectations
+categories: job-interviews
 ---
 
 ## Company's pet peeves

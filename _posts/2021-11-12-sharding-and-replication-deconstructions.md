@@ -1,6 +1,7 @@
 ---
 title: Sharding and replication deconstructions
 layout: post
+categories: replication
 ---
 
 #### What different replication deconstructions exist?

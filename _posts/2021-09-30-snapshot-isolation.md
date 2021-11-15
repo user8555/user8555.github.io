@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Snapshot isolation
-tags: transactions
+categories: distributed-logging
 ---
 
 ## Summary

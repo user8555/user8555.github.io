@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Distributed Redo log applications 
-tags: logging
+title: Applications of distributed redo logs 
+categories: distributed-logging
 ---
 
 ## When to use distributed redo log

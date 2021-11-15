@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 5 things to succeed in startup
+categories: strategy
 ---
 
 Reference: 

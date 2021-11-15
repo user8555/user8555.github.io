@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Distributed log
-tags: logging
+categories: distributed-logging
 ---
 
 Designing a fault tolerant log is at the heart of many applications. It can be used to build queues like Kakfa, stream layer for Azure storage, transaction log for FaunaDB and so on.

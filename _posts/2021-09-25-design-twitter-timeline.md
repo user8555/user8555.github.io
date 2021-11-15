@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Design twitter timeline and search
+title: Design Twitter timeline and search
 category: design-challenge
 ---
 

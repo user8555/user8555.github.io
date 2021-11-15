@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why build own raft protocol implementation, not use Tikv::raft
+categories: past-projects
 ---
 
 1. Tikv::Raft assumes log-writes are sync, hence can only write to in memory logs. If ABS were to use it, ABS will need to write to in-memory. That means:

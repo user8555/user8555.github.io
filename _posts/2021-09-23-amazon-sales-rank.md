@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Design amazon sales rank
+title: Design Amazon sales rank
 category: design-challenge
 ---
 

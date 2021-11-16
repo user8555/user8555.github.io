@@ -19,7 +19,7 @@ $base-laptop-font-size:   12px;
 $spacing-unit:     30px;
 
 $text-color:       #111;
-$background-color: white;
+$background-color: #FFE8D6;
 // $background-color: #f5f5dc;
 $brand-color: #191970 !default;
 
@@ -60,5 +60,5 @@ h1, h2, h3, h4 {
 
 // Import partials from the `whiteglass` theme.
 @import "whiteglass";
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto%20Slab&display=swap');

@@ -38,6 +38,7 @@ plugins:
   - jekyll-archives
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-gist
   - webrick
 
 # Build settings
